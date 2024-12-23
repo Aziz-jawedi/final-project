@@ -1,0 +1,446 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #f0f0f0; /* Light text color */
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: #1a1a1a; /* Dark header */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #f0f0f0; /* Light text for navbar links */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #f26522; /* Accent color on hover */
+}
+
+/* Banner Section */
+.banner {
+    background: url('images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+}
+
+.banner_content h1 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.shop_now {
+    background-color: #f26522; /* Accent color */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.shop_now:hover {
+    background-color: #e24b13; /* Slightly darker hover effect */
+}
+
+/* Fashion Section */
+.fashion_section {
+    padding: 60px 20px;
+    background-color: #121212; /* Dark background */
+    text-align: center;
+}
+
+.fashion_section h2 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #f0f0f0; /* Light color for text */
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #1e1e1e; /* Dark background for products */
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.price {
+    color: #f26522; /* Accent color for price */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buttons a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #f26522; /* Accent color */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buttons a:hover {
+    background-color: #e24b13; /* Darker hover effect */
+}
+
+/* Footer Section */
+footer {
+    background-color: #1a1a1a; /* Dark footer */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer_logo img {
+    max-height: 50px;
+    margin-bottom: 20px;
+}
+
+.subscribe_section {
+    margin-top: 20px;
+}
+
+.subscribe_section input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 25px;
+    border: 2px solid #090303;
+    margin-right: 10px;
+}
+
+.subscribe_btn {
+    background-color: #f26522; /* Accent color */
+    color: rgb(54, 20, 20);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.subscribe_btn:hover {
+    background-color: #e24b13; /* Darker hover effect */
+}
+
+.footer_menu ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    list-style: none;
+    gap: 20px;
+}
+
+.footer_menu li a {
+    color: rgb(24, 6, 6); /* Light footer links */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.location {
+    margin-top: 20px;
+}
+
+/* Copyright Section */
+.copyright_section {
+    background-color: #121212;
+    color: rgb(30, 9, 9);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.copyright_section a {
+    color: #f26522; /* Accent color */
+    text-decoration: none;
+}
+
+.copyright_section a:hover {
+    text-decoration: underline;
+}
+
+/* Style for Cart Confirmation Message */
+.cart-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: rgb(26, 6, 6);
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for Buy Now Button */
+.buy_now {
+    background-color: #f26522; /* Accent color */
+    color: rgb(26, 4, 4);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buy_now:hover {
+    background-color: #e24b13; /* Darker hover effect */
+}
+
+.buy_now:disabled {
+    background-color: #4CAF50; /* Green for disabled button */
+    cursor: not-allowed;
+}
+
+/* Cart Modal Styles */
+.cart-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart-icon img {
+    width: 30px;
+    cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background-color: #1e1e1e; /* Dark content background */
+    padding: 20px;
+    max-width: 400px;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+#cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout, #close-cart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Accent color for checkout */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout:hover, #close-cart:hover {
+    background-color: #0056b3; /* Darker hover effect */
+}
+
+
+
+
+
+
+
+
+
+/* Cart Section Styles */
+.cart {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background for cart */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.cart h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f0f0f0; /* Light text color for the title */
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    color: #f0f0f0; /* Light text color for cart items */
+}
+
+#cart-items li {
+    padding: 15px;
+    border-bottom: 1px solid #333; /* Dark border for list items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items li span {
+    color: #f26522; /* Accent color for price */
+    font-weight: bold;
+}
+
+#cart-items button {
+    padding: 5px 10px;
+    background-color: #e24b13; /* Darker orange for delete buttons */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#cart-items button:hover {
+    background-color: #f26522; /* Lighter orange on hover */
+}
+
+p {
+    font-size: 18px;
+    color: #f0f0f0; /* Light text for total price */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#total-price {
+    color: #f26522; /* Accent color for total price */
+}
+
+#checkout {
+    padding: 12px 30px;
+    background-color: #f26522; /* Accent color for checkout button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkout:hover {
+    background-color: #e24b13; /* Darker hover effect for checkout button */
+}
+
+#checkout:disabled {
+    background-color: #4CAF50; /* Green for disabled checkout button */
+    cursor: not-allowed;
+}
+
