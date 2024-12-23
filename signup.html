@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Header Section */
+        header {
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            animation: slideDown 0.5s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            font-size: 1.2rem;
+        }
+
+        .navbar ul li a {
+            color: #f28b05;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #e67e22;
+        }
+
+        /* Main Content */
+        .form-container {
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 80px; /* Adjusted for header space */
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container input {
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #2e2e2e;
+            color: #ffffff;
+        }
+
+        .form-container input::placeholder {
+            color: #aaaaaa;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-container button {
+            padding: 0.75rem;
+            background-color: #f28b05;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #e67e22;
+        }
+
+        .form-container button:active {
+            transform: scale(0.95);
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-top: 1rem;
+            color: #e0e0e0;
+        }
+
+        .form-container a {
+            color: #f28b05;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .form-container a:hover {
+            color: #f28b05;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-container.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="signup-container" class="form-container active">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div id="password-error" class="error-message">Password must be at least 8 characters long, include at least one number and one special character.</div>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            <div id="confirm-password-error" class="error-message">Passwords do not match.</div>
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="#" id="show-login">Log in</a></p>
+    </div>
+
+    <div id="login-container" class="form-container hidden">
+        <h1>Log In</h1>
+        <form id="login-form">
+            <input type="email" id="login-email" name="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" name="login-password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <p>Don’t have an account? <a href="#" id="show-signup">Sign up</a></p>
+    </div>
+
+    <script>
+        const signupContainer = document.getElementById('signup-container');
+        const loginContainer = document.getElementById('login-container');
+        const showLoginLink = document.getElementById('show-login');
+        const showSignupLink = document.getElementById('show-signup');
+
+        showLoginLink.addEventListener('click', () => {
+            signupContainer.classList.remove('active');
+            signupContainer.classList.add('hidden');
+            setTimeout(() => {
+                loginContainer.classList.remove('hidden');
+                loginContainer.classList.add('active');
+            }, 500);
+        });
+
+        showSignupLink.addEventListener('click', () => {
+            loginContainer.classList.remove('active');
+            loginContainer.classList.add('hidden');
+            setTimeout(() => {
+                signupContainer.classList.remove('hidden');
+                signupContainer.classList.add('active');
+            }, 500);
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const passwordError = document.getElementById('password-error');
+            const confirmPasswordError = document.getElementById('confirm-password-error');
+            const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"'<>,.?/]).{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                passwordError.style.display = 'block';
+                return;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            if (password !== confirmPassword) {
+                confirmPasswordError.style.display = 'block';
+                return;
+            } else {
+                confirmPasswordError.style.display = 'none';
+            }
+
+            alert('Sign up successful!');
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Log in successful!');
+        });
+    </script>
+</body>
+</html>
+
+
