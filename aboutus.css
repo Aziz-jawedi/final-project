@@ -1,0 +1,241 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Prevent content from hiding behind fixed header */
+    opacity: 0;
+    animation: fadeInBody 1s ease-out forwards; /* Animation for body fade-in */
+}
+
+/* Animation for the body fade-in */
+@keyframes fadeInBody {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Article Container */
+.inf-cont {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInContent 1.5s ease-out forwards; /* Animation for content fade-in */
+}
+
+/* Animation for article fade-in */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Heading */
+.inf-cont h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffcc00;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideInUp 1s ease-out forwards; /* Animation for heading slide-in */
+}
+
+/* Animation for heading slide-in */
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Paragraphs */
+.inf-cont p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.5s ease-out forwards; /* Animation for paragraphs fade-up */
+}
+
+/* Animation for paragraphs fade-up */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .inf-cont {
+        padding: 1.5rem;
+    }
+
+    .inf-cont h1 {
+        font-size: 2rem;
+    }
+
+    .inf-cont p {
+        font-size: 1rem;
+    }
+}
+
+/* General reset to make sure the layout works as intended */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make header fixed at the top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #090505; /* Set background color to ensure visibility */
+    z-index: 1000; /* Make sure it stays on top of other elements */
+    padding: 10px 0; /* Optional padding for the header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    opacity: 0;
+    animation: fadeInHeader 1s ease-out forwards; /* Header fade-in animation */
+}
+
+/* Animation for header fade-in */
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.header_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-right: 20px; /* Space between navbar items */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #e05c0a; /* Navbar link color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+}
+
+/* Navbar link hover effect */
+.navbar a:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Make sure content does not overlap with header */
+body {
+    padding-top: 80px;
+}
+
+/* Footer animation */
+footer {
+    background-color: #090505;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInFooter 1.5s ease-out forwards; /* Animation for footer fade-in */
+}
+
+/* Animation for footer fade-in */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+footer .footer_logo img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+footer .location {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+footer .location p {
+    color: #aaa;
+}
+
+/* Copyright section animation */
+.copyright_section {
+    background-color: #1a1a1a;
+    color: #aaa;
+    padding: 10px 0;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInCopyright 1.5s ease-out forwards; /* Animation for copyright fade-in */
+}
+
+/* Animation for copyright fade-in */
+@keyframes fadeInCopyright {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.copyright_section a {
+    color: #ffcc00;
+}
+
+.copyright_section a:hover {
+    text-decoration: underline;
+}
+

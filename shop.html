@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EflyerShop</title>
+    <style>
+        /* Dark Theme Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header_main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar ul li a:hover {
+            color: #e05c0a;
+        }
+
+        .banner {
+            background: url('images/banner-image.jpg') center center no-repeat;
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .banner_content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .shop_now {
+            background-color: #e05c0a;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .shop_now:hover {
+            background-color: #c45707;
+        }
+
+        .fashion_section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: #1f1f1f;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #333;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p.price {
+            font-size: 1.4em;
+            color: #e05c0a;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        .buttons button, .buttons a {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons a {
+            margin-left: 10px;
+        }
+
+        .product-description {
+            display: none;
+            margin-top: 10px;
+            color: #bbb;
+        }
+
+        /* Cart Section */
+        .cart-container {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .cart-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-items li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items li span {
+            flex-grow: 1;
+        }
+
+        .delete-btn {
+            background-color: #e05c0a;
+            padding: 5px 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .delete-btn:hover {
+            background-color: #c45707;
+        }
+
+        .cart-summary p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer_logo img {
+            width: 100px;
+        }
+
+        .location {
+            margin-top: 10px;
+        }
+
+        .copyright_section {
+            background-color: #121212;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .copyright_section a {
+            color: #e05c0a;
+        }
+
+        .copyright_section a:hover {
+            color: #c45707;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="header_main">
+        <div class="logo">
+            <img src="images/logo.png" alt="eflyerShop Logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Banner Section -->
+<section class="banner">
+    <div class="banner_content">
+        <h1>Your Favorite Fashion Destination</h1>
+        <a href="shop.html" class="shop_now">Shop Now</a>
+    </div>
+</section>
+
+<!-- Fashion Section -->
+<section class="fashion_section">
+    <h2>Featured Fashion</h2>
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product" data-name="Black Hoodie" data-price="39.99">
+            <img src="images/black-hoodie-mockup-design-png-transparent-background_135595-14479.avif" alt="hoodie">
+            <h3>Black Hoodie</h3>
+            <p class="price">$39.99</p>
+            <div class="buttons">
+                <button class="buy_now">Add to Cart</button>
+                <a href="javascript:void(0);" class="see_more">See More</a>
+            </div>
+            <p class="product-description" style="display:none;">This Black Hoodie is perfect for any casual occasion. Made with soft cotton, it's an all-time favorite!</p>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product" data-name="Veste" data-price="49.99">
+            <img src="images/veste-violette-denim-base-isolee-fond-transparent_191095-22712.avif" alt="veste">
+            <h3>Veste</h3>
+            <p class="price">$49.99</p>
+            <div class="buttons">
+                <button class="buy_now">Add to Cart</button>
+                <a href="javascript:void(0);" class="see_more">See More</a>
+            </div>
+            <p class="product-description" style="display:none;">This veste is made from breathable fabric, designed for both comfort and style at formal events.</p>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product" data-name="Jeans" data-price="89.99">
+            <img src="images/jeans-bleus-isoles-fond-transparent_191095-17292.avif" alt="jeans">
+            <h3>Jeans</h3>
+            <p class="price">$89.99</p>
+            <div class="buttons">
+                <button class="buy_now">Add to Cart</button>
+                <a href="javascript:void(0);" class="see_more">See More</a>
+            </div>
+            <p class="product-description" style="display:none;">Indulge in comfort and luxury with these stunning jeans, perfect for cozy days or casual outings.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cart Summary -->
+<section class="cart-container">
+    <h2>Your Cart</h2>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-summary">
+        <p>Total Price: $<span id="total-price">0.00</span></p>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer_content">
+        <div class="footer_logo">
+            <img src="images/logo.png" alt="eflyer Logo">
+        </div>
+        <div class="location">
+            <p>Rue Hbib Borghiba, Korba</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright Section -->
+<div class="copyright_section">
+    <p>&copy; 2024 SahaShop. All rights reserved. <a href="#">Privacy Policy</a></p>
+</div>
+
+<script>
+    const cartItems = [];
+
+    document.querySelectorAll('.buy_now').forEach(button => {
+        button.addEventListener('click', () => {
+            const productElement = button.closest('.product');
+            const productName = productElement.querySelector('h3').textContent;
+            const productPrice = parseFloat(productElement.getAttribute('data-price'));
+
+            // Add item to cart
+            cartItems.push({ name: productName, price: productPrice });
+
+            // Update cart display
+            updateCart();
+        });
+    });
+
+    function updateCart() {
+        const cartList = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        // Clear previous cart
+        cartList.innerHTML = '';
+
+        let total = 0;
+
+        // Loop through cart items and display them
+        cartItems.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button class="delete-btn" data-index="${index}">Delete</button>`;
+            cartList.appendChild(li);
+            total += item.price;
+        });
+
+        // Update total price
+        totalPriceElement.textContent = total.toFixed(2);
+
+        // Attach delete functionality to each button
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const index = button.getAttribute('data-index');
+                cartItems.splice(index, 1); // Remove item from cart
+                updateCart(); // Update the cart display
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
